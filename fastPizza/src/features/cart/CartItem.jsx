@@ -3,6 +3,7 @@ import { formatCurrency } from '../../utils/helpers';
 import DeleteItem from './DeleteItem';
 import UpdateItemQuantity from './UpdateItemQuantity';
 import { getCurrentQuantityById } from './cartSlice';
+import '../../styles/cart.css';
 
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item;
@@ -10,12 +11,12 @@ function CartItem({ item }) {
   const currentQuantity = useSelector(getCurrentQuantityById(pizzaId));
 
   return (
-    <li className="py-3 sm:flex sm:items-center sm:justify-between">
-      <p className="mb-1 sm:mb-0">
+    <li className="cart-item">
+      <p className="cart-item-name">
         {quantity}&times; {name}
       </p>
-      <div className="flex items-center justify-between sm:gap-6">
-        <p className="text-sm font-bold">{formatCurrency(totalPrice)}</p>
+      <div className="cart-item-controls">
+        <p className="cart-item-price">{formatCurrency(totalPrice)}</p>
 
         <UpdateItemQuantity
           pizzaId={pizzaId}

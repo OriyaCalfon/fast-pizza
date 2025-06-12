@@ -1,6 +1,7 @@
 import React from 'react'
 import { getOrder } from '../../services/apiRestaurant'
 import { useLoaderData } from 'react-router-dom';
+import '../../styles/order.css';
 
 function Order() {
 
@@ -8,7 +9,7 @@ function Order() {
 
     return (
         <>
-            <div>{order}</div>
+            <div className="order-display">{order}</div>
             <p>order</p>
         </>
     )
