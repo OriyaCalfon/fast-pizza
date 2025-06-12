@@ -40,7 +40,7 @@ function Order() {
         </div>
       </div>
 
-      <div className="order-delivery-box">
+      {/* <div className="order-delivery-box">
         <p className="delivery-time">
           {deliveryIn >= 0
             ? `Only ${deliveryIn} minutes left 😃`
@@ -49,7 +49,7 @@ function Order() {
         <p className="delivery-estimate">
           (Estimated delivery: {formatDate(estimatedDelivery)})
         </p>
-      </div>
+      </div> */}
 
       <ul className="order-items-list">
         {cart.map((item) => (

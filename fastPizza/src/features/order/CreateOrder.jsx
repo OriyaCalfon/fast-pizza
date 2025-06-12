@@ -58,17 +58,17 @@ function CreateOrder() {
 
         <div className="form-group sm-row">
           <label className="form-label">Phone number</label>
-          <div className="grow">
+        
             <input className="form-input" type="tel" name="phone" required />
             {formErrors?.phone && (
               <p className="error-message">{formErrors.phone}</p>
             )}
-          </div>
+    
         </div>
 
         <div className="form-group sm-row">
           <label className="form-label">Address</label>
-          <div className="grow">
+       
             <input
               className="form-input"
               type="text"
@@ -80,7 +80,7 @@ function CreateOrder() {
             {addressStatus === 'error' && (
               <p className="error-message">{errorAddress}</p>
             )}
-          </div>
+       
 
           {!position.latitude && !position.longitude && (
             <span className="get-position-button">

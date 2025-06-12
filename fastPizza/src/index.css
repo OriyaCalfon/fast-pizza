@@ -30,6 +30,7 @@ body {
   background-color: #ffc720;
   color: #4a3729;
   border: none;
+  text-decoration: none;
 }
 
 .button-primary:hover {
