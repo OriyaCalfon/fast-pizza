@@ -1,26 +1,28 @@
-import React from 'react'
-import Header from './Header'
-import CartOverview from '../features/cart/CartOverview'
-import { Outlet, useNavigation } from 'react-router-dom'
+import Header from './Header';
 import Loader from './Loader';
+import CartOverview from '../features/cart/CartOverview';
+import { Outlet, useNavigation } from 'react-router-dom';
+import '../styles/ui.css';
 
 function AppLayout() {
+  const navigation = useNavigation();
+  const isLoading = navigation.state === 'loading';
 
-    const navigation = useNavigation();
-    const isLoading = navigation.state === "loading";
+  return (
+    <div className="app-layout">
+      {isLoading && <Loader />}
 
-    return (
-        <div className="app-layout">
-            {isLoading && <Loader />}
-            <Header></Header>
-            <div className="overflow-scroll">
-                <main className="mx-auto max-w-3xl">
-                    <Outlet />
-                </main>
-            </div>
-            <CartOverview></CartOverview>
-        </div>
-    )
+      <Header />
+
+      <div className="app-content-scroll">
+        <main className="app-main">
+          <Outlet />
+        </main>
+      </div>
+
+      <CartOverview />
+    </div>
+  );
 }
 
-export default AppLayout
+export default AppLayout;

@@ -4,7 +4,7 @@ import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, getCart } from './cartSlice';
-import '../../index.css';
+import '../../styles/cart.css';
 
 function Cart() {
   const username = useSelector((state) => state.user.username);
@@ -14,18 +14,18 @@ function Cart() {
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="container">
+    <div className="cart-container">
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
-      <h2 className="heading">Your cart, {username}</h2>
+      <h2 className="cart-heading">Your cart, {username}</h2>
 
-      <ul className="list">
+      <ul className="cart-list">
         {cart.map((item) => (
           <CartItem item={item} key={item.pizzaId} />
         ))}
       </ul>
 
-      <div className="button-group">
+      <div className="cart-actions">
         <Button to="/order/new" type="primary">
           Order pizzas
         </Button>

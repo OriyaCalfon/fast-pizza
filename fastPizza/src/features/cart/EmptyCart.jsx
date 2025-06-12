@@ -1,11 +1,12 @@
 import LinkButton from '../../ui/LinkButton';
+import '../../styles/cart.css';
 
 function EmptyCart() {
   return (
-    <div className="px-4 py-3">
+    <div className="empty-cart">
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
-      <p className="mt-7 font-semibold">
+      <p className="empty-cart-message">
         Your cart is still empty. Start adding some pizzas :)
       </p>
     </div>

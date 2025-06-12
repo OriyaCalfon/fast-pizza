@@ -6,12 +6,15 @@ function OrderItem({ item, isLoadingIngredients, ingredients }) {
 
   return (
     <li className="order-item">
-      <div className="order-item-content">
-        <p className="order-item-name">
-          <span className="order-item-quantity">{quantity}&times;</span> {name}
+      <div className="item-header">
+        <p>
+          <span className="item-quantity">{quantity}&times;</span> {name}
         </p>
-        <p className="order-item-price">{formatCurrency(totalPrice)}</p>
+        <p className="item-price">{formatCurrency(totalPrice)}</p>
       </div>
+      <p className="item-ingredients">
+        {isLoadingIngredients ? 'Loading...' : ingredients.join(', ')}
+      </p>
     </li>
   );
 }

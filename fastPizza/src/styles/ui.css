@@ -87,3 +87,21 @@
     }
   }
   
+
+  .app-layout {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+  }
+  
+  .app-content-scroll {
+    overflow-y: auto;
+  overflow-x: hidden;
+  }
+  
+  .app-main {
+    /* max-width: 768px;  */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
