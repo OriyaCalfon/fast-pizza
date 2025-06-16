@@ -58,44 +58,47 @@ function CreateOrder() {
 
         <div className="form-group sm-row">
           <label className="form-label">Phone number</label>
-        
-            <input className="form-input" type="tel" name="phone" required />
-            {formErrors?.phone && (
-              <p className="error-message">{formErrors.phone}</p>
-            )}
-    
+
+          <input className="form-input" type="tel" name="phone" required />
+          {formErrors?.phone && (
+            <p className="error-message">{formErrors.phone}</p>
+          )}
+
         </div>
 
         <div className="form-group sm-row">
           <label className="form-label">Address</label>
-       
+
+          <div style={{ position: 'relative', width: '100%' }}>
             <input
-              className="form-input"
+              className="form-input-address"
               type="text"
               name="address"
               disabled={isLoadingAddress}
               defaultValue={address}
               required
             />
-            {addressStatus === 'error' && (
-              <p className="error-message">{errorAddress}</p>
-            )}
-       
 
-          {!position.latitude && !position.longitude && (
-            <span className="get-position-button">
-              <Button
-                disabled={isLoadingAddress}
-                type="small"
-                onClick={(e) => {
-                  e.preventDefault();
-                  dispatch(fetchAddress());
-                }}
-              >
-                Get position
-              </Button>
-            </span>
+            {!position.latitude && !position.longitude && (
+              <span className="get-position-button">
+                <Button
+                  disabled={isLoadingAddress}
+                  type="small"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(fetchAddress());
+                  }}
+                >
+                  Get position
+                </Button>
+              </span>
+            )}
+          </div>
+
+          {addressStatus === 'error' && (
+            <p className="error-message">{errorAddress}</p>
           )}
+
         </div>
 
         <div className="checkbox-container">

@@ -179,6 +179,16 @@
     height: 27px; 
 }
 
+
+.form-input-address{
+    padding: 8px;
+    border-radius: 50px;
+    width: 97%;
+    color: #4a3729;
+    border: 1px solid #ccc;
+    height: 27px; 
+}
+
 .form-input:focus {
     outline: none;
     border: 3px solid rgb(255, 207, 32);
