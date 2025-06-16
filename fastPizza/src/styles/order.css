@@ -176,6 +176,7 @@
     width: 100%;
     color: #4a3729;
     border: 1px solid #ccc;
+    height: 27px; 
 }
 
 .form-input:focus {
