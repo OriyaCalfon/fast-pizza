@@ -43,7 +43,7 @@ function Order() {
       {/* <div className="order-delivery-box">
         <p className="delivery-time">
           {deliveryIn >= 0
-            ? `Only ${deliveryIn} minutes left 😃`
+            ? `Only ${deliveryIn} minutes left`
             : 'Order should have arrived'}
         </p>
         <p className="delivery-estimate">
